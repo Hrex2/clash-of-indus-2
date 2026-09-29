@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://ddxgy46rrq8dw"]
+
+[ext_resource type="Texture2D" uid="uid://dakaieh4k0ejq" path="res://assets/heroes/neanderthal.png" id="1_o5spc"]
+[ext_resource type="Script" uid="uid://0mpllvrg5pi2" path="res://scripts/HeroCard.gd" id="1_rjvo0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjvo0"]
+bg_color = Color(0.23137255, 0.1882353, 0.14509805, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 6
+
+[node name="HeroCard" type="Control" unique_id=492360597]
+custom_minimum_size = Vector2(180, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1100.0
+offset_bottom = -460.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rjvo0")
+
+[node name="CardBackground" type="Panel" parent="." unique_id=771546302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjvo0")
+
+[node name="HeroImage" type="TextureRect" parent="." unique_id=1598978403]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 21.0
+offset_right = 161.0
+offset_bottom = 124.0
+texture = ExtResource("1_o5spc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeroName" type="Label" parent="." unique_id=317096587]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 126.0
+offset_right = 177.0
+offset_bottom = 175.0
+text = "NEANDERTHAL
+HUNTER"
+
+[node name="Stats" type="HBoxContainer" parent="." unique_id=2121661882]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -84.0
+offset_right = 71.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="HPLabel" type="Label" parent="Stats" unique_id=507548274]
+layout_mode = 2
+text = "♥ 80"
+
+[node name="AttackLabel" type="Label" parent="Stats" unique_id=1865925663]
+layout_mode = 2
+text = "⚔ 18"
+
+[node name="AbilityName" type="Label" parent="." unique_id=1836062747]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 186.0
+offset_right = 163.0
+offset_bottom = 209.0
+text = "POWER STRIKE"
+horizontal_alignment = 1
+
+[node name="AbilityDescription" type="Label" parent="." unique_id=1973666850]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 250.0
+offset_right = 165.0
+offset_bottom = 280.0
+text = "Deals +8 damage"
+horizontal_alignment = 1
+
+[node name="RarityLabel" type="Label" parent="." unique_id=623260810]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 90.0
+offset_bottom = 33.0
+text = "COMMON"
+
+[node name="LevelLabel" type="Label" parent="." unique_id=172178493]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 8.0
+offset_right = 170.0
+offset_bottom = 33.0
+text = "LV.1"
+
+[node name="ClickArea" type="Button" parent="." unique_id=1591769821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="ClickArea" to="." method="_on_click_area_pressed"]

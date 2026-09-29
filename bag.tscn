@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://csyhgvcpy7h4"]
+
+[ext_resource type="Texture2D" uid="uid://cg84mavxw7x8w" path="res://Screenshot 2026-09-11 152628.png" id="1_u3xkn"]
+[ext_resource type="Texture2D" uid="uid://bicrayihij7cn" path="res://butoon (1).png" id="2_321ir"]
+[ext_resource type="Texture2D" uid="uid://c8q0c3jctoxqy" path="res://butoon (2).png" id="3_moeqt"]
+[ext_resource type="Texture2D" uid="uid://k4pwpw085dx0" path="res://butoon (3).png" id="4_sw78u"]
+[ext_resource type="Texture2D" uid="uid://csuuu61rfbny2" path="res://butoon (4).png" id="5_wcgu0"]
+
+[node name="Node2D" type="Node2D" unique_id=1991955094]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1141966519]
+offset_right = 615.0
+offset_bottom = 399.0
+texture = ExtResource("1_u3xkn")
+stretch_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect" unique_id=1382222401]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 85.0
+offset_right = 500.0
+offset_bottom = 128.0
+texture_normal = ExtResource("2_321ir")
+
+[node name="TextureButton2" type="TextureButton" parent="TextureRect" unique_id=6713736]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 190.0
+offset_right = 276.0
+offset_bottom = 233.0
+texture_normal = ExtResource("3_moeqt")
+
+[node name="TextureButton3" type="TextureButton" parent="TextureRect" unique_id=1185126041]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 84.0
+offset_right = 273.0
+offset_bottom = 127.0
+texture_normal = ExtResource("4_sw78u")
+
+[node name="TextureButton4" type="TextureButton" parent="TextureRect" unique_id=1928532492]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 189.0
+offset_right = 506.0
+offset_bottom = 232.0
+texture_normal = ExtResource("5_wcgu0")

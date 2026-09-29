@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b0neopdb81iw6"]
+
+[ext_resource type="Script" uid="uid://dkvusoo5v6ouw" path="res://scripts/characters/CharacterAnimation.gd" id="1_3irpl"]
+[ext_resource type="SpriteFrames" uid="uid://b87uj7bpryaiw" path="res://data/characters/mammoth_rider_front.tres" id="2_3irpl"]
+[ext_resource type="SpriteFrames" uid="uid://dex6wastyvmp2" path="res://data/characters/mammoth_rider_back.tres" id="3_5q8dx"]
+
+[node name="CharacterAnimation" type="Node2D" unique_id=1019709060]
+script = ExtResource("1_3irpl")
+
+[node name="Front" type="Node2D" parent="." unique_id=1624495250]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Front" unique_id=1691946133]
+sprite_frames = ExtResource("2_3irpl")
+animation = &"idle"
+
+[node name="Back" type="Node2D" parent="." unique_id=747406621]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Back" unique_id=1491694856]
+position = Vector2(2, 53)
+sprite_frames = ExtResource("3_5q8dx")
+animation = &"attack"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=376430358]

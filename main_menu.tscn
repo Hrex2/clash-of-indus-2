@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c67e5ocq6fpr5"]
+
+[ext_resource type="Texture2D" uid="uid://cpjr7au3b8ldp" path="res://Screenshot 2026-09-11 145803.png" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://d2pny8kp1dbhn" path="res://butoon.png" id="2_7vrkn"]
+[ext_resource type="FontFile" uid="uid://drcr0br0y61tu" path="res://Press_Start_2P/PressStart2P-Regular.ttf" id="3_fu7sn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jix8l"]
+
+[node name="Node2D" type="Node2D" unique_id=337400166]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=915217616]
+offset_right = 723.0
+offset_bottom = 442.0
+texture = ExtResource("1_06t4h")
+
+[node name="Battle" type="TextureButton" parent="." unique_id=659663707]
+anchors_preset = -1
+offset_left = 252.0
+offset_top = 110.0
+offset_right = 429.0
+offset_bottom = 161.0
+texture_normal = ExtResource("2_7vrkn")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="Battle" unique_id=608915482]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 11.0
+offset_right = 130.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_fu7sn")
+text = "Battle"
+label_settings = SubResource("LabelSettings_jix8l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stage" type="TextureButton" parent="." unique_id=1074868239]
+anchors_preset = -1
+offset_left = 256.0
+offset_top = 251.0
+offset_right = 433.0
+offset_bottom = 302.0
+texture_normal = ExtResource("2_7vrkn")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="Stage" unique_id=168450067]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 11.0
+offset_right = 130.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_fu7sn")
+text = "Stage"
+label_settings = SubResource("LabelSettings_jix8l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bag" type="TextureButton" parent="." unique_id=335406544]
+anchors_preset = -1
+offset_left = 254.0
+offset_top = 178.0
+offset_right = 431.0
+offset_bottom = 229.0
+texture_normal = ExtResource("2_7vrkn")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="Bag" unique_id=1986260357]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 11.0
+offset_right = 130.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_fu7sn")
+text = "Bag"
+label_settings = SubResource("LabelSettings_jix8l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="setting" type="TextureButton" parent="." unique_id=68855391]
+anchors_preset = -1
+offset_left = 257.0
+offset_top = 317.0
+offset_right = 434.0
+offset_bottom = 368.0
+texture_normal = ExtResource("2_7vrkn")
+ignore_texture_size = true
+
+[node name="Label" type="Label" parent="setting" unique_id=1907619443]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 11.0
+offset_right = 130.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("3_fu7sn")
+text = "setting"
+label_settings = SubResource("LabelSettings_jix8l")
+horizontal_alignment = 1
+vertical_alignment = 1

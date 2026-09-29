@@ -1,0 +1,559 @@
+[gd_scene format=3 uid="uid://ulvnnsn707t6"]
+
+[ext_resource type="PackedScene" uid="uid://ddxgy46rrq8dw" path="res://scenes/cards/hero_card.tscn" id="1_6iigb"]
+[ext_resource type="Script" uid="uid://bgknxp13eloxu" path="res://scenes/battle/battle_scene.gd" id="1_ww1p6"]
+[ext_resource type="Texture2D" uid="uid://ckdibiuxv4jij" path="res://assets/animations/fire_keeper/front/hurt.png" id="2_lbt8a"]
+[ext_resource type="PackedScene" uid="uid://bw7pjj708nkuk" path="res://scenes/AbilityCard.tscn" id="2_pu738"]
+[ext_resource type="Texture2D" uid="uid://u2tuqwnyuk5q" path="res://assets/animations/neanderthal/back/hurt.png" id="5_ww1p6"]
+[ext_resource type="Script" uid="uid://d0ctw0ndibg4u" path="res://scripts/characters/CharacterManager.gd" id="8_2wmvw"]
+[ext_resource type="Script" uid="uid://60jufohurxh1" path="res://scripts/HeroUnit.gd" id="8_7hnyd"]
+[ext_resource type="Script" uid="uid://21oos55rdklu" path="res://scenes/battle/battle_manager.gd" id="11_dddu7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ww1p6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wmvw"]
+atlas = SubResource("CompressedTexture2D_ww1p6")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww1p6"]
+atlas = SubResource("CompressedTexture2D_ww1p6")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hnyd"]
+atlas = SubResource("CompressedTexture2D_ww1p6")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dddu7"]
+atlas = SubResource("CompressedTexture2D_ww1p6")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3511k"]
+atlas = SubResource("CompressedTexture2D_ww1p6")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puhd7"]
+atlas = SubResource("CompressedTexture2D_ww1p6")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpswg"]
+atlas = SubResource("CompressedTexture2D_ww1p6")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te27b"]
+atlas = ExtResource("2_lbt8a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7i1my"]
+atlas = ExtResource("2_lbt8a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s01p"]
+atlas = ExtResource("2_lbt8a")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc5fe"]
+atlas = ExtResource("2_lbt8a")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpsmh"]
+atlas = ExtResource("2_lbt8a")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43ebt"]
+atlas = ExtResource("2_lbt8a")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7hnyd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjiip"]
+atlas = SubResource("CompressedTexture2D_7hnyd")
+region = Rect2(0, 128, 69, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22msv"]
+atlas = SubResource("CompressedTexture2D_7hnyd")
+region = Rect2(69, 128, 69, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxdit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wmvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww1p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hnyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dddu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3511k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puhd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpswg")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te27b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7i1my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s01p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc5fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpsmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43ebt")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjiip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22msv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cywj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxdit"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0vga"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwcfl"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqid7"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73faq"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceb08"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7qte"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxts7"]
+atlas = SubResource("CompressedTexture2D_cywj5")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi7ix"]
+atlas = ExtResource("5_ww1p6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xti3"]
+atlas = ExtResource("5_ww1p6")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yekx8"]
+atlas = ExtResource("5_ww1p6")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxyyw"]
+atlas = ExtResource("5_ww1p6")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upfwi"]
+atlas = ExtResource("5_ww1p6")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yujt"]
+atlas = ExtResource("5_ww1p6")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2wmvw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgwun"]
+atlas = SubResource("CompressedTexture2D_2wmvw")
+region = Rect2(0, 0, 69, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5nf0"]
+atlas = SubResource("CompressedTexture2D_2wmvw")
+region = Rect2(69, 0, 69, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upfwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxdit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0vga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwcfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqid7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73faq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceb08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7qte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxts7")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi7ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xti3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yekx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxyyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upfwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yujt")
+}],
+"loop": false,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgwun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5nf0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="BattleScene" type="Control" unique_id=853276827]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ww1p6")
+
+[node name="EnemyPanel" type="Control" parent="." unique_id=238790917]
+self_modulate = Color(0.1592431, 0.47746587, 0.7085718, 1)
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 250.0
+offset_bottom = 310.0
+
+[node name="EnemyHeroStatus1" type="PanelContainer" parent="EnemyPanel" unique_id=1974913975]
+custom_minimum_size = Vector2(210, 60)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 118.0
+offset_bottom = 91.0
+
+[node name="Content" type="VBoxContainer" parent="EnemyPanel/EnemyHeroStatus1" unique_id=1197886771]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="EnemyPanel/EnemyHeroStatus1/Content" unique_id=2009186059]
+layout_mode = 2
+text = "Enemy Hero 1"
+
+[node name="HealthBar" type="ProgressBar" parent="EnemyPanel/EnemyHeroStatus1/Content" unique_id=1713725563]
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="HPText" type="Label" parent="EnemyPanel/EnemyHeroStatus1/Content" unique_id=1759106263]
+layout_mode = 2
+
+[node name="Status" type="Label" parent="EnemyPanel/EnemyHeroStatus1/Content" unique_id=16703650]
+layout_mode = 2
+text = "Normal"
+
+[node name="EnemyHeroStatus2" type="PanelContainer" parent="EnemyPanel" unique_id=2083944697]
+custom_minimum_size = Vector2(210, 60)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 220.0
+offset_bottom = 181.0
+
+[node name="Content" type="VBoxContainer" parent="EnemyPanel/EnemyHeroStatus2" unique_id=1971961937]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="EnemyPanel/EnemyHeroStatus2/Content" unique_id=43559648]
+layout_mode = 2
+text = "Enemy Hero 2"
+
+[node name="HealthBar" type="ProgressBar" parent="EnemyPanel/EnemyHeroStatus2/Content" unique_id=1963354505]
+layout_mode = 2
+value = 100.0
+
+[node name="Status" type="Label" parent="EnemyPanel/EnemyHeroStatus2/Content" unique_id=971296854]
+layout_mode = 2
+text = "Normal"
+
+[node name="EnemyHeroStatus3" type="PanelContainer" parent="EnemyPanel" unique_id=1573449431]
+custom_minimum_size = Vector2(210, 60)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 271.0
+
+[node name="Content" type="VBoxContainer" parent="EnemyPanel/EnemyHeroStatus3" unique_id=1731848116]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="EnemyPanel/EnemyHeroStatus3/Content" unique_id=206651336]
+layout_mode = 2
+text = "Enemy Hero 3"
+
+[node name="HealthBar" type="ProgressBar" parent="EnemyPanel/EnemyHeroStatus3/Content" unique_id=583903594]
+layout_mode = 2
+value = 100.0
+
+[node name="Status" type="Label" parent="EnemyPanel/EnemyHeroStatus3/Content" unique_id=218582094]
+layout_mode = 2
+text = "Normal"
+
+[node name="PlayerPanel" type="Control" parent="." unique_id=1087793790]
+self_modulate = Color(0.1592431, 0.47746587, 0.7085718, 1)
+anchors_preset = 0
+offset_left = 1030.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 310.0
+
+[node name="PlayerHeroStatus1" type="PanelContainer" parent="PlayerPanel" unique_id=1733373260]
+custom_minimum_size = Vector2(210, 60)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 118.0
+offset_bottom = 91.0
+
+[node name="Content" type="VBoxContainer" parent="PlayerPanel/PlayerHeroStatus1" unique_id=100230959]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="PlayerPanel/PlayerHeroStatus1/Content" unique_id=1664803039]
+layout_mode = 2
+text = "Player Hero 1"
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerPanel/PlayerHeroStatus1/Content" unique_id=433808661]
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="Status" type="Label" parent="PlayerPanel/PlayerHeroStatus1/Content" unique_id=651938132]
+layout_mode = 2
+text = "Normal"
+
+[node name="PlayerHeroStatus2" type="PanelContainer" parent="PlayerPanel" unique_id=906930512]
+custom_minimum_size = Vector2(210, 60)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 220.0
+offset_bottom = 181.0
+
+[node name="Content" type="VBoxContainer" parent="PlayerPanel/PlayerHeroStatus2" unique_id=701004024]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="PlayerPanel/PlayerHeroStatus2/Content" unique_id=1683128474]
+layout_mode = 2
+text = "Player Hero 2"
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerPanel/PlayerHeroStatus2/Content" unique_id=1420026902]
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="Status" type="Label" parent="PlayerPanel/PlayerHeroStatus2/Content" unique_id=1432142407]
+layout_mode = 2
+text = "Normal"
+
+[node name="PlayerHeroStatus3" type="PanelContainer" parent="PlayerPanel" unique_id=690592409]
+custom_minimum_size = Vector2(210, 60)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 190.0
+offset_right = 220.0
+offset_bottom = 271.0
+
+[node name="Content" type="VBoxContainer" parent="PlayerPanel/PlayerHeroStatus3" unique_id=819561186]
+layout_mode = 2
+
+[node name="HeroName" type="Label" parent="PlayerPanel/PlayerHeroStatus3/Content" unique_id=689375941]
+layout_mode = 2
+text = "Player Hero 3"
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerPanel/PlayerHeroStatus3/Content" unique_id=2022551775]
+layout_mode = 2
+value = 100.0
+
+[node name="Status" type="Label" parent="PlayerPanel/PlayerHeroStatus3/Content" unique_id=1550511840]
+layout_mode = 2
+text = "Normal"
+
+[node name="Battlefield" type="Control" parent="." unique_id=42053842]
+self_modulate = Color(0.39016113, 0.13635126, 0.08148716, 1)
+anchors_preset = 0
+offset_left = 270.0
+offset_top = 20.0
+offset_right = 1010.0
+offset_bottom = 450.0
+
+[node name="EnemyCharacters" type="HBoxContainer" parent="Battlefield" unique_id=827415582]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerCharacters" type="HBoxContainer" parent="Battlefield" unique_id=1071137484]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heroes" type="Node2D" parent="Battlefield" unique_id=265767458]
+
+[node name="EnemyHero1" type="AnimatedSprite2D" parent="Battlefield/Heroes" unique_id=1172026891]
+position = Vector2(180, 100)
+sprite_frames = SubResource("SpriteFrames_xxdit")
+animation = &"idle"
+script = ExtResource("8_7hnyd")
+
+[node name="EnemyHero2" type="AnimatedSprite2D" parent="Battlefield/Heroes" unique_id=1264280916]
+position = Vector2(370, 100)
+sprite_frames = SubResource("SpriteFrames_xxdit")
+animation = &"idle"
+script = ExtResource("8_7hnyd")
+
+[node name="EnemyHero3" type="AnimatedSprite2D" parent="Battlefield/Heroes" unique_id=620648627]
+position = Vector2(560, 100)
+sprite_frames = SubResource("SpriteFrames_xxdit")
+animation = &"idle"
+script = ExtResource("8_7hnyd")
+
+[node name="PlayerHero1" type="AnimatedSprite2D" parent="Battlefield/Heroes" unique_id=1880111148]
+position = Vector2(180, 280)
+sprite_frames = SubResource("SpriteFrames_upfwi")
+animation = &"attack"
+script = ExtResource("8_7hnyd")
+
+[node name="PlayerHero2" type="AnimatedSprite2D" parent="Battlefield/Heroes" unique_id=121967439]
+position = Vector2(370, 280)
+sprite_frames = SubResource("SpriteFrames_upfwi")
+animation = &"idle"
+script = ExtResource("8_7hnyd")
+
+[node name="PlayerHero3" type="AnimatedSprite2D" parent="Battlefield/Heroes" unique_id=1020434955]
+position = Vector2(560, 280)
+sprite_frames = SubResource("SpriteFrames_upfwi")
+animation = &"idle"
+script = ExtResource("8_7hnyd")
+
+[node name="HeroCards" type="Control" parent="." unique_id=962523277]
+self_modulate = Color(0.79037815, 0.5741632, 0.82458496, 1)
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 500.0
+offset_right = 620.0
+offset_bottom = 690.0
+
+[node name="HeroCardContainer" type="HBoxContainer" parent="HeroCards" unique_id=1630175746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="HeroCard" parent="HeroCards/HeroCardContainer" unique_id=492360597 instance=ExtResource("1_6iigb")]
+layout_mode = 2
+
+[node name="HeroCard2" parent="HeroCards/HeroCardContainer" unique_id=75246497 instance=ExtResource("1_6iigb")]
+layout_mode = 2
+
+[node name="HeroCard3" parent="HeroCards/HeroCardContainer" unique_id=2060694700 instance=ExtResource("1_6iigb")]
+layout_mode = 2
+
+[node name="AbilityCards" type="Control" parent="." unique_id=135889775]
+self_modulate = Color(0.7543674, 0.61871594, 0.31469437, 1)
+anchors_preset = 0
+offset_left = 650.0
+offset_top = 500.0
+offset_right = 1260.0
+offset_bottom = 690.0
+
+[node name="AbilityCardContainer" type="HBoxContainer" parent="AbilityCards" unique_id=1530192700]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="AbilityCard" parent="AbilityCards/AbilityCardContainer" unique_id=1085520972 instance=ExtResource("2_pu738")]
+layout_mode = 2
+
+[node name="AbilityCard2" parent="AbilityCards/AbilityCardContainer" unique_id=275241920 instance=ExtResource("2_pu738")]
+layout_mode = 2
+
+[node name="AbilityCard3" parent="AbilityCards/AbilityCardContainer" unique_id=1618470616 instance=ExtResource("2_pu738")]
+layout_mode = 2
+
+[node name="BattleManager" type="Node" parent="." unique_id=1949600828]
+script = ExtResource("11_dddu7")
+
+[node name="CharacterManager" type="Node" parent="." unique_id=343875616]
+script = ExtResource("8_2wmvw")
+
+[connection signal="animation_finished" from="Battlefield/Heroes/PlayerHero1" to="Battlefield/Heroes/PlayerHero1" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Battlefield/Heroes/PlayerHero2" to="Battlefield/Heroes/PlayerHero2" method="_on_animation_finished"]
+[connection signal="animation_finished" from="Battlefield/Heroes/PlayerHero3" to="Battlefield/Heroes/PlayerHero3" method="_on_animation_finished"]
+[connection signal="hero_selected" from="HeroCards/HeroCardContainer/HeroCard" to="." method="_on_hero_card_hero_selected"]
